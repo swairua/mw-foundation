@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 const navigation = [
@@ -8,7 +9,7 @@ const navigation = [
   { label: "News & stories", to: "/news" },
 ];
 
-export function SiteLayout({ children }: { children: React.ReactNode }) {
+export function SiteLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -53,7 +54,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         )}
       </header>
 
-      <main>{children}</main>
+      <main><Outlet /></main>
 
       <footer className="bg-forest text-white">
         <div className="mx-auto grid max-w-[1320px] gap-12 px-6 py-16 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-10 lg:py-20">

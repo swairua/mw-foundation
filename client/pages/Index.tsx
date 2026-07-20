@@ -1,6 +1,5 @@
 import { ArrowDown, ArrowRight, ArrowUpRight, CirclePlay } from "lucide-react";
 import { Link } from "react-router-dom";
-import { SiteLayout } from "@/components/SiteLayout";
 
 const heroImage = "https://mw-foundation.org/wp-content/uploads/2022/08/home6-i1.png";
 const programs = [
@@ -13,7 +12,7 @@ const programs = [
 
 export default function Index() {
   return (
-    <SiteLayout>
+    <>
       <section className="relative flex min-h-[720px] items-end overflow-hidden bg-forest px-6 pb-12 pt-36 text-white lg:min-h-[860px] lg:px-10 lg:pb-16">
         <img src={heroImage} alt="A community gathering in Kenya" className="absolute inset-0 h-full w-full object-cover object-center opacity-70 mix-blend-luminosity" />
         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/45 to-forest/25" />
@@ -80,6 +79,6 @@ export default function Index() {
           <div className="mt-16 grid border-y border-forest/15 md:grid-cols-3">{[{ title: "Donate", text: "Help move a good idea into a real opportunity." }, { title: "Volunteer", text: "Bring your skills, energy, and perspective to the work." }, { title: "Partner", text: "Build something meaningful with us." }].map((item) => <Link to="/support" key={item.title} className="group border-b border-forest/15 p-7 transition hover:bg-sand md:border-b-0 md:border-r last:border-r-0"><div className="flex items-start justify-between"><h3 className="font-display text-3xl font-semibold text-forest">{item.title}</h3><ArrowUpRight size={20} className="text-forest/50 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></div><p className="mt-10 max-w-[220px] text-sm leading-relaxed text-forest/60">{item.text}</p></Link>)}</div>
         </div>
       </section>
-    </SiteLayout>
+    </>
   );
 }
