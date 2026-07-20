@@ -1,26 +1,20 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { SiteLayout } from "@/components/SiteLayout";
 
 const NotFound = () => {
   const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname,
-    );
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
-    </div>
+    <SiteLayout>
+      <section className="flex min-h-[72vh] items-center bg-ivory px-6 pb-20 pt-40 lg:px-10">
+        <div className="mx-auto w-full max-w-[1320px]">
+          <p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-coral">Route not found · {location.pathname}</p>
+          <h1 className="font-display text-7xl font-semibold leading-none tracking-[-0.06em] text-forest sm:text-9xl">Not quite<br /><em className="font-serif font-normal text-saffron">here.</em></h1>
+          <p className="mt-8 max-w-md text-lg leading-relaxed text-forest/65">This page does not exist yet, but there is plenty of good work to explore.</p>
+          <Link to="/" className="mt-10 inline-flex items-center gap-3 rounded-full bg-forest px-6 py-4 text-sm font-bold text-white transition hover:bg-saffron hover:text-forest"><ArrowLeft size={16} /> Return home</Link>
+        </div>
+      </section>
+    </SiteLayout>
   );
 };
 

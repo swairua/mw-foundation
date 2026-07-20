@@ -14,6 +14,12 @@ export default {
     },
     extend: {
       colors: {
+        forest: "#15382c",
+        ivory: "#f7f4ec",
+        sand: "#e9dfca",
+        saffron: "#f8cc4d",
+        coral: "#e98268",
+        ink: "#15382c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,6 +63,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        sans: ["DM Sans", "sans-serif"],
+        display: ["DM Sans", "sans-serif"],
+        serif: ["DM Serif Display", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
