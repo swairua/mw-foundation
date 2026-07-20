@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { SiteLayout } from "@/components/SiteLayout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Placeholder from "./pages/Placeholder";
+import FlapPanel, { flapRoutePaths } from "./pages/Placeholder";
 
 const queryClient = new QueryClient();
 
@@ -15,26 +15,10 @@ function SectionRouteShell() {
   return (
     <>
       <Index />
-      <Placeholder />
+      <FlapPanel />
     </>
   );
 }
-
-const sectionPaths = [
-  "our-work",
-  "who-we-are",
-  "news",
-  "support",
-  "objectives",
-  "about-us",
-  "news-and-stories",
-  "contacts",
-  "tech-and-innovation",
-  "education",
-  "economic-empowerment",
-  "disability-inclusion",
-  "wellness-and-mental-health",
-];
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -44,7 +28,7 @@ const App = () => (
         <Routes>
           <Route element={<SiteLayout />}>
             <Route index element={<Index />} />
-            {sectionPaths.map((path) => <Route key={path} path={path} element={<SectionRouteShell />} />)}
+            {flapRoutePaths.map((path) => <Route key={path} path={path.slice(1)} element={<SectionRouteShell />} />)}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
