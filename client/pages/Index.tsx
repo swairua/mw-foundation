@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const heroImage = "https://mw-foundation.org/wp-content/uploads/2022/08/home6-i1.png";
 const programs = [
-  { number: "01", title: "Digital inclusion", text: "Opening pathways to knowledge, connection, and opportunity through technology.", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-a-darmel-7710088-rf9uo56hrnrzgo3q46vmg1vebofrn12geh589vva34.jpg" },
-  { number: "02", title: "Education & leadership", text: "Nurturing curious minds and courageous leaders for a changing world.", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-n-voitkevich-7172820-rf9uo56hrnrzgo3q46vmg1vebofrn12geh589vva34.jpg" },
-  { number: "03", title: "Women’s economic empowerment", text: "Backing women with the skills, support, and confidence to thrive.", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-greta-hoffman-9705815-riyi0un2ufba8raynekbvh8yw0l39klkvdiwxb6ms0.jpg" },
-  { number: "04", title: "Wellness", text: "Creating communities where physical and mental wellbeing can flourish.", image: "https://mw-foundation.org/wp-content/uploads/2025/11/pexels-rethaferguson-3621954-740x416.jpg" },
-  { number: "05", title: "Disability inclusion", text: "Making sure every person can participate, contribute, and belong.", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-cottonbro-8527286-rf9uo56hrnrzgo3q46vmg1vebofrn12geh589vva34.jpg" },
+  { number: "01", title: "Digital inclusion", text: "Opening pathways to knowledge, connection, and opportunity through technology.", to: "/tech-and-innovation", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-a-darmel-7710088-rf9uo56hrnrzgo3q46vmg1vebofrn12geh589vva34.jpg" },
+  { number: "02", title: "Education & leadership", text: "Nurturing curious minds and courageous leaders for a changing world.", to: "/education", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-n-voitkevich-7172820-rf9uo56hrnrzgo3q46vmg1vebofrn12geh589vva34.jpg" },
+  { number: "03", title: "Women’s economic empowerment", text: "Backing women with the skills, support, and confidence to thrive.", to: "/economic-empowerment", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-greta-hoffman-9705815-riyi0un2ufba8raynekbvh8yw0l39klkvdiwxb6ms0.jpg" },
+  { number: "04", title: "Wellness", text: "Creating communities where physical and mental wellbeing can flourish.", to: "/wellness-and-mental-health", image: "https://mw-foundation.org/wp-content/uploads/2025/11/pexels-rethaferguson-3621954-740x416.jpg" },
+  { number: "05", title: "Disability inclusion", text: "Making sure every person can participate, contribute, and belong.", to: "/disability-inclusion", image: "https://mw-foundation.org/wp-content/uploads/elementor/thumbs/pexels-cottonbro-8527286-rf9uo56hrnrzgo3q46vmg1vebofrn12geh589vva34.jpg" },
 ];
 
 export default function Index() {
@@ -56,7 +56,7 @@ export default function Index() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {programs.map((program, index) => (
-              <Link to="/our-work" key={program.number} className={`group relative min-h-[390px] overflow-hidden rounded-[2px] bg-forest ${index === 0 ? "lg:col-span-2" : ""}`}>
+              <Link to={program.to} key={program.number} className={`group relative min-h-[390px] overflow-hidden rounded-[2px] bg-forest ${index === 0 ? "lg:col-span-2" : ""}`}>
                 <img src={program.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-65 transition duration-700 group-hover:scale-105 group-hover:opacity-80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/25 to-transparent" />
                 <div className="relative flex h-full flex-col justify-between p-6 text-white lg:p-8"><span className="text-xs font-bold tracking-[0.2em] text-saffron">{program.number}</span><div><h3 className="max-w-sm font-display text-3xl font-semibold leading-none tracking-[-0.03em] sm:text-4xl">{program.title}</h3><p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">{program.text}</p><span className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-saffron">Discover <ArrowUpRight size={15} /></span></div></div>
