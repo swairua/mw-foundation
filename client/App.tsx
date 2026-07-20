@@ -11,6 +11,31 @@ import Placeholder from "./pages/Placeholder";
 
 const queryClient = new QueryClient();
 
+function SectionRouteShell() {
+  return (
+    <>
+      <Index />
+      <Placeholder />
+    </>
+  );
+}
+
+const sectionPaths = [
+  "our-work",
+  "who-we-are",
+  "news",
+  "support",
+  "objectives",
+  "about-us",
+  "news-and-stories",
+  "contacts",
+  "tech-and-innovation",
+  "education",
+  "economic-empowerment",
+  "disability-inclusion",
+  "wellness-and-mental-health",
+];
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -19,10 +44,7 @@ const App = () => (
         <Routes>
           <Route element={<SiteLayout />}>
             <Route index element={<Index />} />
-            <Route path="our-work" element={<><Index /><Placeholder /></>} />
-            <Route path="who-we-are" element={<><Index /><Placeholder /></>} />
-            <Route path="news" element={<><Index /><Placeholder /></>} />
-            <Route path="support" element={<><Index /><Placeholder /></>} />
+            {sectionPaths.map((path) => <Route key={path} path={path} element={<SectionRouteShell />} />)}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
