@@ -17,7 +17,7 @@ export function SiteLayout() {
         <div className="mx-auto flex h-24 max-w-[1320px] items-center justify-between px-6 lg:px-10">
           <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
             <img
-              src="https://mw-foundation.org/wp-content/uploads/2025/10/cropped-MERCY-WANJAU-FOUNDATION-LOGO-BLACK-01-scaled-2-270x270.png"
+              src="/assets/images/logo.png"
               alt="Mercy Wanjau Foundation"
               className="h-12 w-12 rounded-full bg-white object-contain p-1"
             />
