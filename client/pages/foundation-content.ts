@@ -1,4 +1,4 @@
-import archive from "../mw-foundation-content.json";
+import archive from "../mw-foundation-content.json" assert { type: "json" };
 
 export type FocusPage = {
   id: string;
