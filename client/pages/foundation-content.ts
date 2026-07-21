@@ -1,4 +1,4 @@
-import archive from "../../public/mw-foundation-content.json";
+import archive from "../mw-foundation-content.json";
 
 export type FocusPage = {
   id: string;
