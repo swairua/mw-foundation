@@ -1,4 +1,4 @@
-import archive from "../mw-foundation-content.json" assert { type: "json" };
+import archive from "../mw-foundation-content.json";
 
 export type FocusPage = {
   id: string;
@@ -13,11 +13,11 @@ export type FocusPage = {
 };
 
 const imageById: Record<string, { image: string; imageAlt: string }> = {
-  technology: { image: "/assets/images/pexels-a-darmel-7710088.jpg", imageAlt: "Young people learning together" },
-  education: { image: "/assets/images/pexels-n-voitkevich-7172820.jpg", imageAlt: "Students learning together" },
-  economic: { image: "/assets/images/pexels-greta-hoffman-9705815.jpg", imageAlt: "A woman working at a laptop" },
-  wellness: { image: "/assets/images/pexels-rethaferguson-3621954.jpg", imageAlt: "A woman smiling outdoors" },
-  disability: { image: "/assets/images/pexels-cottonbro-8527286.jpg", imageAlt: "People sharing a moment together" },
+  technology: { image: "/assets/images/economic-empowerment-women.jpg", imageAlt: "Three women smiling as they work together at a laptop" },
+  education: { image: "/assets/images/tech-education.jpg", imageAlt: "Two young people laughing together" },
+  economic: { image: "/assets/images/disability-inclusion-tech.jpg", imageAlt: "Women smiling while harvesting coffee on a farm" },
+  wellness: { image: "/assets/images/digital-skills-youth.jpg", imageAlt: "A young woman stretching under an open blue sky" },
+  disability: { image: "/assets/images/tech-mentorship.jpg", imageAlt: "A prosthetic hand reaching toward a human hand" },
 };
 
 const pillarHighlights: Record<string, string[]> = {
