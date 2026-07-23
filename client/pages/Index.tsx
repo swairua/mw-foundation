@@ -1,21 +1,22 @@
 import { ArrowDown, ArrowRight, ArrowUpRight, CirclePlay } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const heroImage = "/assets/images/home6-i1.png";
+const heroImage = "/assets/images/rural-community.jpg";
 const programs = [
-  { number: "01", title: "Digital inclusion", text: "Opening pathways to knowledge, connection, and opportunity through technology.", to: "/tech-and-innovation", image: "/assets/images/pexels-a-darmel-7710088.jpg" },
-  { number: "02", title: "Education & leadership", text: "Nurturing curious minds and courageous leaders for a changing world.", to: "/education", image: "/assets/images/pexels-n-voitkevich-7172820.jpg" },
-  { number: "03", title: "Women's economic empowerment", text: "Backing women with the skills, support, and confidence to thrive.", to: "/economic-empowerment", image: "/assets/images/pexels-greta-hoffman-9705815.jpg" },
-  { number: "04", title: "Wellness", text: "Creating communities where physical and mental wellbeing can flourish.", to: "/wellness-and-mental-health", image: "/assets/images/pexels-rethaferguson-3621954.jpg" },
-  { number: "05", title: "Disability inclusion", text: "Making sure every person can participate, contribute, and belong.", to: "/disability-inclusion", image: "/assets/images/pexels-cottonbro-8527286.jpg" },
+  { number: "01", title: "Digital inclusion", text: "Opening pathways to knowledge, connection, and opportunity through technology.", to: "/tech-and-innovation", image: "/assets/images/digital-skills-youth.jpg" },
+  { number: "02", title: "Education & leadership", text: "Nurturing curious minds and courageous leaders for a changing world.", to: "/education", image: "/assets/images/tech-mentorship.jpg" },
+  { number: "03", title: "Women's economic empowerment", text: "Backing women with the skills, support, and confidence to thrive.", to: "/economic-empowerment", image: "/assets/images/economic-empowerment-women.jpg" },
+  { number: "04", title: "Wellness", text: "Creating communities where physical and mental wellbeing can flourish.", to: "/wellness-and-mental-health", image: "/assets/images/community-wellness.jpg" },
+  { number: "05", title: "Disability inclusion", text: "Making sure every person can participate, contribute, and belong.", to: "/disability-inclusion", image: "/assets/images/disability-inclusion-tech.jpg" },
 ];
 
 export default function Index() {
   return (
     <>
       <section className="relative flex min-h-[720px] items-end overflow-hidden bg-forest px-6 pb-12 pt-36 text-white lg:min-h-[860px] lg:px-10 lg:pb-16">
-        <img src={heroImage} alt="A community gathering in Kenya" className="absolute inset-0 h-full w-full object-cover object-center opacity-70 mix-blend-luminosity" />
-        <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/45 to-forest/25" />
+        <img src={heroImage} alt="A community gathering in Kenya" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/60 to-forest/40" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative mx-auto grid w-full max-w-[1320px] gap-12 lg:grid-cols-[1fr_360px] lg:items-end">
           <div>
             <p className="mb-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-saffron"><span className="h-px w-9 bg-saffron" /> Inclusive growth, together</p>
@@ -25,9 +26,9 @@ export default function Index() {
               <a href="#manifesto" className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-4 text-sm font-semibold text-white transition hover:border-white">Our vision <ArrowDown size={16} /></a>
             </div>
           </div>
-          <div className="border-l border-white/35 pl-6 lg:mb-2">
-            <p className="text-sm leading-relaxed text-white/75">Building stronger communities in Kenya through technology, education, leadership, economic empowerment, wellness and inclusion.</p>
-            <div className="mt-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/55"><span className="h-2 w-2 rounded-full bg-saffron" /> Kenya, and beyond</div>
+          <div className="rounded-2xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl lg:mb-2">
+            <p className="text-sm leading-relaxed text-white/90">Building stronger communities in Kenya through technology, education, leadership, economic empowerment, wellness and inclusion.</p>
+            <div className="mt-7 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-saffron/80"><span className="h-2 w-2 rounded-full bg-saffron" /> Kenya, and beyond</div>
           </div>
         </div>
       </section>
@@ -56,10 +57,11 @@ export default function Index() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {programs.map((program, index) => (
-              <Link to={program.to} key={program.number} className={`group relative min-h-[390px] overflow-hidden rounded-[2px] bg-forest ${index === 0 ? "lg:col-span-2" : ""}`}>
-                <img src={program.image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-65 transition duration-700 group-hover:scale-105 group-hover:opacity-80" />
-                <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/25 to-transparent" />
-                <div className="relative flex h-full flex-col justify-between p-6 text-white lg:p-8"><span className="text-xs font-bold tracking-[0.2em] text-saffron">{program.number}</span><div><h3 className="max-w-sm font-display text-3xl font-semibold leading-none tracking-[-0.03em] sm:text-4xl">{program.title}</h3><p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">{program.text}</p><span className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-saffron">Discover <ArrowUpRight size={15} /></span></div></div>
+              <Link to={program.to} key={program.number} className={`group relative min-h-[390px] overflow-hidden rounded-2xl ${index === 0 ? "lg:col-span-2" : ""}`}>
+                <img src={program.image} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-forest/30 to-transparent" />
+                <div className="absolute inset-0 bg-black/20" />
+                <div className="relative flex h-full flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm lg:p-8"><span className="text-xs font-bold tracking-[0.2em] text-saffron">{program.number}</span><div><h3 className="max-w-sm font-display text-3xl font-semibold leading-none tracking-[-0.03em] sm:text-4xl">{program.title}</h3><p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">{program.text}</p><span className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-saffron">Discover <ArrowUpRight size={15} /></span></div></div>
               </Link>
             ))}
           </div>
@@ -76,7 +78,7 @@ export default function Index() {
       <section className="bg-ivory px-6 py-24 lg:px-10 lg:py-32">
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-end"><div><p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-forest/55">Take part</p><h2 className="max-w-xl font-display text-3xl font-semibold leading-tight tracking-[-0.03em] text-forest sm:text-4xl lg:text-5xl">There’s a role for <em className="font-serif font-normal text-saffron">you.</em></h2></div><p className="max-w-md text-base leading-relaxed text-forest/65">Sustainable change is a collective act. Join us in making opportunity more visible, accessible, and possible for more people.</p></div>
-          <div className="mt-16 grid border-y border-forest/15 md:grid-cols-3">{[{ title: "Donate", text: "Help move a good idea into a real opportunity." }, { title: "Volunteer", text: "Bring your skills, energy, and perspective to the work." }, { title: "Partner", text: "Build something meaningful with us." }].map((item) => <Link to="/support" key={item.title} className="group border-b border-forest/15 p-7 transition hover:bg-sand md:border-b-0 md:border-r last:border-r-0"><div className="flex items-start justify-between"><h3 className="font-display text-3xl font-semibold text-forest">{item.title}</h3><ArrowUpRight size={20} className="text-forest/50 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></div><p className="mt-10 max-w-[220px] text-sm leading-relaxed text-forest/60">{item.text}</p></Link>)}</div>
+          <div className="mt-16 grid gap-4 md:grid-cols-3">{[{ title: "Donate", text: "Help move a good idea into a real opportunity." }, { title: "Volunteer", text: "Bring your skills, energy, and perspective to the work." }, { title: "Partner", text: "Build something meaningful with us." }].map((item) => <Link to="/support" key={item.title} className="group rounded-2xl border border-forest/10 bg-white/40 p-7 backdrop-blur-md transition hover:bg-white/60"><div className="flex items-start justify-between"><h3 className="font-display text-3xl font-semibold text-forest">{item.title}</h3><ArrowUpRight size={20} className="text-forest/50 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></div><p className="mt-10 max-w-[220px] text-sm leading-relaxed text-forest/60">{item.text}</p></Link>)}</div>
         </div>
       </section>
     </>

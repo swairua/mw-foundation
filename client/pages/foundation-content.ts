@@ -13,11 +13,11 @@ export type FocusPage = {
 };
 
 const imageById: Record<string, { image: string; imageAlt: string }> = {
-  technology: { image: "/assets/images/pexels-a-darmel-7710088.jpg", imageAlt: "Young people learning together" },
-  education: { image: "/assets/images/pexels-n-voitkevich-7172820.jpg", imageAlt: "Students learning together" },
-  economic: { image: "/assets/images/pexels-greta-hoffman-9705815.jpg", imageAlt: "A woman working at a laptop" },
-  wellness: { image: "/assets/images/pexels-rethaferguson-3621954.jpg", imageAlt: "A woman smiling outdoors" },
-  disability: { image: "/assets/images/pexels-cottonbro-8527286.jpg", imageAlt: "People sharing a moment together" },
+  technology: { image: "/assets/images/tech-education.jpg", imageAlt: "Students learning with technology" },
+  education: { image: "/assets/images/education-global.jpg", imageAlt: "Students in a classroom" },
+  economic: { image: "/assets/images/economic-empowerment-women.jpg", imageAlt: "Women working together" },
+  wellness: { image: "/assets/images/healthcare-wellness.jpg", imageAlt: "Community health workers" },
+  disability: { image: "/assets/images/disability-inclusion-tech.jpg", imageAlt: "Person using assistive technology" },
 };
 
 const pillarHighlights: Record<string, string[]> = {

@@ -1,15 +1,27 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { focusPages } from "../pages/foundation-content";
 
 const navigation = [
-  { label: "Our work", to: "/our-work" },
+  { label: "Our work", to: "/our-work", hasDropdown: true },
   { label: "Who we are", to: "/who-we-are" },
   { label: "News & stories", to: "/news" },
 ];
 
 export function SiteLayout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimeout = useRef<ReturnType<typeof setTimeout>>();
+
+  const handleMouseEnter = (label: string) => {
+    clearTimeout(closeTimeout.current);
+    setOpenDropdown(label);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => setOpenDropdown(null), 150);
+  };
 
   return (
     <div className="min-h-screen bg-ivory text-ink">
@@ -26,9 +38,29 @@ export function SiteLayout() {
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
             {navigation.map((item) => (
-              <NavLink key={item.to} to={item.to} className="text-sm font-medium text-white/80 transition hover:text-saffron">
-                {item.label}
-              </NavLink>
+              item.hasDropdown ? (
+                <div key={item.to} className="relative" onMouseEnter={() => handleMouseEnter(item.label)} onMouseLeave={handleMouseLeave}>
+                  <NavLink to={item.to} className="flex items-center gap-1.5 text-sm font-medium text-white/80 transition hover:text-saffron">
+                    {item.label}
+                    <ChevronDown size={14} className={`transition-transform duration-200 ${openDropdown === item.label ? "rotate-180" : ""}`} />
+                  </NavLink>
+                  {openDropdown === item.label && (
+                    <div className="absolute left-0 top-full mt-2 w-64 rounded-lg border border-white/15 bg-white/10 p-2 shadow-2xl backdrop-blur-xl" onMouseEnter={() => handleMouseEnter(item.label)} onMouseLeave={handleMouseLeave}>
+                      <div className="space-y-1">
+                        {focusPages.map((page) => (
+                          <Link key={page.id} to={page.path} className="block rounded-md px-4 py-2.5 text-sm font-medium text-white/80 transition hover:bg-white/15 hover:text-white">
+                            {page.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <NavLink key={item.to} to={item.to} className="text-sm font-medium text-white/80 transition hover:text-saffron">
+                  {item.label}
+                </NavLink>
+              )
             ))}
             <Link to="/support" className="group flex items-center gap-2 rounded-full bg-saffron px-5 py-3 text-sm font-bold text-forest transition hover:bg-white">
               Support our mission <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -43,9 +75,25 @@ export function SiteLayout() {
           <nav className="border-t border-white/15 bg-forest px-6 py-6 lg:hidden" aria-label="Mobile navigation">
             <div className="flex flex-col gap-5">
               {navigation.map((item) => (
-                <Link key={item.to} to={item.to} onClick={() => setMenuOpen(false)} className="text-lg font-medium text-white">
-                  {item.label}
-                </Link>
+                item.hasDropdown ? (
+                  <div key={item.to}>
+                    <Link to={item.to} onClick={() => setMenuOpen(false)} className="flex items-center gap-1.5 text-lg font-medium text-white">
+                      {item.label}
+                      <ChevronDown size={16} />
+                    </Link>
+                    <div className="ml-4 mt-3 space-y-2 border-l border-white/15 pl-4">
+                      {focusPages.map((page) => (
+                        <Link key={page.id} to={page.path} onClick={() => setMenuOpen(false)} className="block text-sm text-white/70 transition hover:text-white">
+                          {page.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link key={item.to} to={item.to} onClick={() => setMenuOpen(false)} className="text-lg font-medium text-white">
+                    {item.label}
+                  </Link>
+                )
               ))}
               <Link to="/support" onClick={() => setMenuOpen(false)} className="w-fit rounded-full bg-saffron px-5 py-3 text-sm font-bold text-forest">Support our mission</Link>
             </div>
