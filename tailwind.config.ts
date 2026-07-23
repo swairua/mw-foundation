@@ -19,6 +19,7 @@ export default {
         sand: "#e9dfca",
         saffron: "#f8cc4d",
         coral: "#e98268",
+        clay: "#a64b2e",
         ink: "#15382c",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
