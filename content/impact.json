@@ -1,0 +1,38 @@
+{
+  "_help": "Headline numbers for the home page impact band. Each stat shows its confirmed `value` once you enter one (whole number, no commas). Until then the band shows the `interim` figure, which is already documented in a published field report. Update `asOf` whenever you confirm the figures.",
+  "asOf": "TODO: date the headline figures were last confirmed, e.g. October 2026",
+  "stats": [
+    {
+      "icon": "graduation",
+      "value": null,
+      "suffix": "+",
+      "label": "students reached",
+      "context": "Across all programmes",
+      "interim": { "value": 570, "label": "students learning French", "context": "French Initiative, since August 2025" }
+    },
+    {
+      "icon": "sprout",
+      "value": null,
+      "suffix": "+",
+      "label": "farmers supported",
+      "context": "Kirinyaga County",
+      "interim": { "value": 42, "label": "farmers at the national food summit", "context": "Kiine Ward delegation, October 2026" }
+    },
+    {
+      "icon": "users",
+      "value": null,
+      "suffix": "",
+      "label": "volunteers",
+      "context": "Mentors, teachers and professionals",
+      "interim": { "value": 5, "label": "schools in Kirinyaga County", "context": "Hosting the French Initiative" }
+    },
+    {
+      "icon": "map",
+      "value": null,
+      "suffix": "",
+      "label": "counties",
+      "context": "Where our programmes run",
+      "interim": { "value": "Monthly", "label": "mental-health forums", "context": "Online, with partner providers" }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "hosting": {
     "buildCommand": "pnpm run build",
-    "buildOutputDir": "dist/spa",
+    "buildOutputDir": "dist/client",
     "nodeVersion": "22"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "_help": "Donation settings. Tier outcomes are drafts written from programme needs on the old website — the Foundation must confirm each one before launch (remove the TODO: prefix once confirmed). Leave `card.url` empty to show the card option as 'coming soon'.",
+  "currency": "KES",
+  "defaultAmount": 5000,
+  "tiers": [
+    { "amount": 1000, "outcome": "TODO: French learning materials for one student for a term" },
+    { "amount": 5000, "outcome": "TODO: a month of digital skills training for a learner with a disability" },
+    { "amount": 10000, "outcome": "TODO: start-up inputs for a woman farmer completing a training cohort" }
+  ],
+  "mpesa": {
+    "method": "paybill",
+    "paybill": "TODO: Paybill number",
+    "account": "DONATION",
+    "till": "TODO: Buy Goods till number (optional — delete this line if not used)",
+    "registeredName": "MERCY WANJAU FOUNDATION",
+    "qrImage": ""
+  },
+  "card": {
+    "label": "Card or PayPal",
+    "url": "",
+    "monthlyUrl": ""
+  },
+  "bank": "TODO: bank transfer details for larger gifts and grants (bank, branch, account name, account number, SWIFT)"
+}

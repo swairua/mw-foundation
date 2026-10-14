@@ -1,0 +1,277 @@
+# Content editor for mw-foundation.org (Sveltia CMS, Decap-compatible).
+# Open https://mw-foundation.org/admin and sign in with a GitHub personal access
+# token that has Contents read/write access to this repository only.
+# Every save is a commit to `main`, which Vercel builds and publishes in ~1 minute.
+# See README.md → "Editing content".
+
+backend:
+  name: github
+  repo: swairua/mw-foundation
+  branch: main
+  commit_messages:
+    create: "content: add {{collection}} “{{slug}}”"
+    update: "content: update {{collection}} “{{slug}}”"
+    delete: "content: delete {{collection}} “{{slug}}”"
+    uploadMedia: "content: upload “{{path}}”"
+    deleteMedia: "content: delete “{{path}}”"
+
+site_url: https://mw-foundation.org
+logo_url: /favicon.svg
+media_folder: content/images
+public_folder: /content/images
+
+collections:
+  - name: stories
+    label: News & Stories
+    label_singular: Story
+    folder: content/stories
+    create: true
+    slug: "{{slug}}"
+    summary: "{{date}} · {{title}}"
+    sortable_fields: [date, title]
+    description: "Field reports and articles. Upload photos at least 1600px wide. Never name children in captions."
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: date, label: Publication date, widget: datetime, format: "YYYY-MM-DD", time_format: false }
+      - name: kind
+        label: Type
+        widget: select
+        options: ["Field report", "Insight"]
+        default: "Field report"
+        hint: "Field report = something the Foundation did. Insight = a perspective or explainer."
+      - name: pillars
+        label: Pillars
+        widget: select
+        multiple: true
+        options:
+          - { label: Digital Inclusion, value: digital-inclusion }
+          - { label: Education & Leadership, value: education-and-leadership }
+          - { label: Women's Economic Empowerment, value: womens-economic-empowerment }
+          - { label: Wellness, value: wellness }
+          - { label: Disability Inclusion, value: disability-inclusion }
+      - { name: excerpt, label: Summary, widget: text, hint: "One or two sentences used on story cards, in search results and when shared." }
+      - { name: standfirst, label: Standfirst, widget: text, required: false, hint: "Optional line under the headline. Leave empty to use the summary." }
+      - { name: image, label: Cover photo, widget: image, required: false }
+      - { name: imageAlt, label: Cover photo description (alt text), widget: string, required: false, hint: "Describe what is in the photo for people using screen readers." }
+      - { name: featured, label: Home page position (1–3), widget: number, value_type: int, min: 1, max: 3, required: false, hint: "Leave empty unless this story should appear in the home page highlights." }
+      - { name: gallery, label: Gallery, widget: list, required: false, field: { name: image, label: Photo, widget: image } }
+      - { name: legacySlug, label: Old WordPress address, widget: hidden, required: false }
+      - { name: body, label: Story, widget: markdown }
+
+  - name: settings
+    label: Site content
+    files:
+      - name: impact
+        label: Impact numbers (home page)
+        file: content/impact.json
+        fields:
+          - { name: _help, widget: hidden }
+          - { name: asOf, label: Figures confirmed as at, widget: string, hint: "e.g. October 2026" }
+          - name: stats
+            label: Headline figures
+            widget: list
+            allow_add: false
+            allow_remove: false
+            fields:
+              - { name: icon, label: Icon, widget: select, options: [graduation, sprout, users, map] }
+              - { name: value, label: Confirmed number, widget: number, value_type: int, required: false, hint: "Leave empty to keep showing the interim figure below." }
+              - { name: suffix, label: Suffix, widget: string, required: false, hint: "e.g. +" }
+              - { name: label, label: Label, widget: string }
+              - { name: context, label: Context line, widget: string }
+              - name: interim
+                label: Interim figure (shown until a confirmed number is entered)
+                widget: object
+                fields:
+                  - { name: value, label: Figure, widget: string }
+                  - { name: label, label: Label, widget: string }
+                  - { name: context, label: Context line, widget: string }
+
+      - name: site
+        label: Contact, social and registration
+        file: content/site.json
+        fields:
+          - { name: _help, widget: hidden }
+          - { name: name, label: Organisation name, widget: string }
+          - { name: shortName, widget: hidden }
+          - { name: url, widget: hidden }
+          - { name: tagline, label: Tagline, widget: string }
+          - { name: description, label: Default search description, widget: text }
+          - name: contact
+            label: Contact details
+            widget: object
+            fields:
+              - { name: email, label: Email, widget: string }
+              - { name: mediaEmail, label: Media enquiries email, widget: string }
+              - { name: phone, label: Phone (as displayed), widget: string }
+              - { name: whatsapp, label: WhatsApp number (digits only, e.g. 2547XXXXXXXX), widget: string }
+              - { name: address, label: Address lines, widget: list }
+              - { name: mapsUrl, label: Google Maps link, widget: string }
+              - { name: hours, label: Office hours, widget: string }
+          - name: social
+            label: Social media
+            widget: list
+            fields:
+              - { name: name, label: Network, widget: select, options: [X, YouTube, LinkedIn, Instagram, WhatsApp] }
+              - { name: handle, label: Handle, widget: string }
+              - { name: url, label: Link, widget: string }
+          - name: registration
+            label: Registration
+            widget: object
+            fields:
+              - { name: legalName, label: Legal name, widget: string }
+              - { name: type, label: Legal form, widget: string }
+              - { name: number, label: Registration number, widget: string }
+              - { name: registeredOffice, label: Registered office, widget: string }
+              - { name: dataProtectionNumber, label: ODPC registration number, widget: string }
+          - { name: independenceStatement, label: Independence statement (footer), widget: text }
+          - { name: officialChannels, label: Official payment channels notice, widget: text }
+          - { name: previousSiteUrl, widget: hidden }
+
+      - name: donate
+        label: Donations
+        file: content/donate.json
+        fields:
+          - { name: _help, widget: hidden }
+          - { name: currency, widget: hidden }
+          - { name: defaultAmount, label: Pre-selected amount, widget: number, value_type: int }
+          - name: tiers
+            label: Gift amounts
+            widget: list
+            fields:
+              - { name: amount, label: Amount (KES), widget: number, value_type: int }
+              - { name: outcome, label: What it makes possible, widget: string, hint: "Completes the sentence: 'KES 5,000 could fund …'" }
+          - name: mpesa
+            label: M-PESA
+            widget: object
+            fields:
+              - { name: method, widget: hidden }
+              - { name: paybill, label: Paybill number, widget: string }
+              - { name: account, label: Account number, widget: string }
+              - { name: till, label: Till number (optional), widget: string, required: false }
+              - { name: registeredName, label: Name shown on the M-PESA confirmation, widget: string }
+              - { name: qrImage, label: Official M-PESA QR code image, widget: image, required: false }
+          - name: card
+            label: Card / PayPal
+            widget: object
+            fields:
+              - { name: label, label: Button label, widget: string }
+              - { name: url, label: One-off donation link, widget: string, required: false }
+              - { name: monthlyUrl, label: Monthly donation link, widget: string, required: false }
+          - { name: bank, label: Bank transfer details, widget: text }
+
+      - name: partners
+        label: Partner logos
+        file: content/partners.json
+        fields:
+          - { name: _help, widget: hidden }
+          - name: partners
+            label: Partners
+            widget: list
+            fields:
+              - { name: name, label: Organisation, widget: string }
+              - { name: logo, label: Logo (SVG or transparent PNG), widget: image, media_folder: /public/partners, public_folder: /partners }
+              - { name: url, label: Website, widget: string, required: false }
+
+      - name: about
+        label: Who We Are
+        file: content/about.json
+        fields:
+          - { name: _help, widget: hidden }
+          - { name: mission, label: Mission, widget: text }
+          - { name: vision, label: Vision, widget: text }
+          - { name: belief, label: Belief statement, widget: string }
+          - name: founder
+            label: Founder
+            widget: object
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: image, label: Portrait, widget: image }
+              - { name: bio, label: Biography paragraphs, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+              - { name: why, label: Why the Foundation exists, widget: text }
+              - { name: quote, label: Personal statement, widget: text }
+          - name: principles
+            label: Core principles
+            widget: list
+            fields:
+              - { name: name, label: Principle, widget: string }
+              - { name: icon, label: Icon, widget: select, options: [shield, users, lightbulb, scale, home, leaf] }
+              - { name: text, label: Description, widget: string }
+          - name: codeOfConduct
+            label: Code of conduct
+            widget: list
+            fields:
+              - { name: name, label: Standard, widget: string }
+              - { name: text, label: Description, widget: string }
+          - name: board
+            label: Board
+            widget: list
+            fields: &person
+              - { name: name, label: Name, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: bio, label: One-line biography, widget: string }
+              - { name: image, label: Photo, widget: image, required: false }
+          - { name: team, label: Team, widget: list, fields: *person }
+          - name: governance
+            label: Reports and policies
+            widget: object
+            fields:
+              - name: documents
+                label: Reports
+                widget: list
+                fields:
+                  - { name: name, label: Title, widget: string }
+                  - { name: detail, label: Detail (e.g. year), widget: string }
+                  - { name: file, label: PDF, widget: file, media_folder: /public/documents, public_folder: /documents, required: false }
+              - name: policies
+                label: Policies
+                widget: list
+                fields:
+                  - { name: name, label: Title, widget: string }
+                  - { name: file, label: PDF or page link, widget: file, media_folder: /public/documents, public_folder: /documents, required: false }
+
+      - name: pillars
+        label: Pillars (Our Work)
+        file: content/pillars.json
+        fields:
+          - { name: _help, widget: hidden }
+          - name: pillars
+            label: Pillars
+            widget: list
+            allow_add: false
+            allow_remove: false
+            summary: "{{fields.number}} · {{fields.name}}"
+            fields:
+              - { name: slug, label: Address (do not change), widget: string }
+              - { name: number, widget: hidden }
+              - { name: name, label: Name, widget: string }
+              - { name: icon, widget: hidden }
+              - { name: image, label: Card photo, widget: image }
+              - { name: heroImage, label: Page photo (optional), widget: image, required: false }
+              - { name: outcome, label: One-line outcome, widget: text }
+              - { name: lead, label: Introduction, widget: text }
+              - { name: overview, label: Overview paragraphs, widget: list, field: { name: paragraph, label: Paragraph, widget: text } }
+              - { name: focus, label: Where we focus, widget: list, field: { name: item, label: Item, widget: string } }
+              - name: programmes
+                label: Programmes
+                widget: list
+                fields:
+                  - { name: title, label: Title, widget: string }
+                  - { name: status, label: Status, widget: string, required: false, hint: "e.g. Since August 2025, Seeking partners" }
+                  - { name: text, label: Description, widget: text }
+                  - { name: story, label: Related story (address), widget: string, required: false }
+              - name: facts
+                label: Documented facts
+                widget: list
+                required: false
+                fields:
+                  - { name: value, label: Figure, widget: string }
+                  - { name: label, label: Label, widget: string }
+              - name: help
+                label: How you can help
+                widget: object
+                fields:
+                  - { name: donate, label: Donate, widget: text }
+                  - { name: volunteer, label: Volunteer, widget: text }
+                  - { name: partner, label: Partner, widget: text }
+              - { name: legacyPaths, widget: hidden }

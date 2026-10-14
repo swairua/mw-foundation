@@ -1,0 +1,685 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist/client",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tech-and-innovation",
+      "destination": "/our-work/digital-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/tech-and-innovation/",
+      "destination": "/our-work/digital-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/education",
+      "destination": "/our-work/education-and-leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/education/",
+      "destination": "/our-work/education-and-leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership",
+      "destination": "/our-work/education-and-leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership/",
+      "destination": "/our-work/education-and-leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/economic-empowerment",
+      "destination": "/our-work/womens-economic-empowerment",
+      "statusCode": 301
+    },
+    {
+      "source": "/economic-empowerment/",
+      "destination": "/our-work/womens-economic-empowerment",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellness-and-mental-health",
+      "destination": "/our-work/wellness",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellness-and-mental-health/",
+      "destination": "/our-work/wellness",
+      "statusCode": 301
+    },
+    {
+      "source": "/disability-inclusion",
+      "destination": "/our-work/disability-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/disability-inclusion/",
+      "destination": "/our-work/disability-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellness",
+      "destination": "/our-work/wellness",
+      "statusCode": 301
+    },
+    {
+      "source": "/wellness/",
+      "destination": "/our-work/wellness",
+      "statusCode": 301
+    },
+    {
+      "source": "/objectives",
+      "destination": "/our-work",
+      "statusCode": 301
+    },
+    {
+      "source": "/objectives/",
+      "destination": "/our-work",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us",
+      "destination": "/who-we-are",
+      "statusCode": 301
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/who-we-are",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/who-we-are",
+      "statusCode": 301
+    },
+    {
+      "source": "/about/",
+      "destination": "/who-we-are",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-and-stories",
+      "destination": "/news",
+      "statusCode": 301
+    },
+    {
+      "source": "/news-and-stories/",
+      "destination": "/news",
+      "statusCode": 301
+    },
+    {
+      "source": "/contacts",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/contacts/",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy2",
+      "destination": "/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy-policy2/",
+      "destination": "/privacy-policy",
+      "statusCode": 301
+    },
+    {
+      "source": "/mw-foundation",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mw-foundation/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/donate",
+      "destination": "/get-involved",
+      "statusCode": 301
+    },
+    {
+      "source": "/donate/",
+      "destination": "/get-involved",
+      "statusCode": 301
+    },
+    {
+      "source": "/support",
+      "destination": "/get-involved",
+      "statusCode": 301
+    },
+    {
+      "source": "/support/",
+      "destination": "/get-involved",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteer",
+      "destination": "/get-involved/volunteer",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteer/",
+      "destination": "/get-involved/volunteer",
+      "statusCode": 301
+    },
+    {
+      "source": "/partner",
+      "destination": "/get-involved/partner",
+      "statusCode": 301
+    },
+    {
+      "source": "/partner/",
+      "destination": "/get-involved/partner",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/rss.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/rss.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/technology",
+      "destination": "/news?pillar=digital-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/technology/",
+      "destination": "/news?pillar=digital-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/education-leadership",
+      "destination": "/news?pillar=education-and-leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/education-leadership/",
+      "destination": "/news?pillar=education-and-leadership",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/economic-empowerment",
+      "destination": "/news?pillar=womens-economic-empowerment",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/economic-empowerment/",
+      "destination": "/news?pillar=womens-economic-empowerment",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/wellness",
+      "destination": "/news?pillar=wellness",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/wellness/",
+      "destination": "/news?pillar=wellness",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/persons-with-disabilities",
+      "destination": "/news?pillar=disability-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/persons-with-disabilities/",
+      "destination": "/news?pillar=disability-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:slug*",
+      "destination": "/news",
+      "statusCode": 301
+    },
+    {
+      "source": "/42-kirinyaga-farmers-take-their-place-in-kenyas-food-systems-conversation",
+      "destination": "/news/42-kirinyaga-farmers-take-their-place-in-kenyas-food-systems-conversation",
+      "statusCode": 301
+    },
+    {
+      "source": "/42-kirinyaga-farmers-take-their-place-in-kenyas-food-systems-conversation/",
+      "destination": "/news/42-kirinyaga-farmers-take-their-place-in-kenyas-food-systems-conversation",
+      "statusCode": 301
+    },
+    {
+      "source": "/assistive-devices-changing-lives-for-persons-with-disabilities",
+      "destination": "/news/assistive-devices-changing-lives-for-persons-with-disabilities",
+      "statusCode": 301
+    },
+    {
+      "source": "/assistive-devices-changing-lives-for-persons-with-disabilities/",
+      "destination": "/news/assistive-devices-changing-lives-for-persons-with-disabilities",
+      "statusCode": 301
+    },
+    {
+      "source": "/assistive-technology-a-game-changer-for-equal-opportunities",
+      "destination": "/news/assistive-technology-a-game-changer-for-equal-opportunities",
+      "statusCode": 301
+    },
+    {
+      "source": "/assistive-technology-a-game-changer-for-equal-opportunities/",
+      "destination": "/news/assistive-technology-a-game-changer-for-equal-opportunities",
+      "statusCode": 301
+    },
+    {
+      "source": "/breaking-the-stigma-mental-health-awareness-in-kenyan-communities",
+      "destination": "/news/breaking-the-stigma-mental-health-awareness-in-kenyan-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/breaking-the-stigma-mental-health-awareness-in-kenyan-communities/",
+      "destination": "/news/breaking-the-stigma-mental-health-awareness-in-kenyan-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/bridging-kenyas-digital-divide-why-access-matters",
+      "destination": "/news/bridging-kenyas-digital-divide-why-access-matters",
+      "statusCode": 301
+    },
+    {
+      "source": "/bridging-kenyas-digital-divide-why-access-matters/",
+      "destination": "/news/bridging-kenyas-digital-divide-why-access-matters",
+      "statusCode": 301
+    },
+    {
+      "source": "/building-a-culture-of-learning-and-leadership-in-kenyan-communities",
+      "destination": "/news/building-a-culture-of-learning-and-leadership-in-kenyan-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/building-a-culture-of-learning-and-leadership-in-kenyan-communities/",
+      "destination": "/news/building-a-culture-of-learning-and-leadership-in-kenyan-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/corporate-partnerships-are-key-to-advancing-education",
+      "destination": "/news/corporate-partnerships-are-key-to-advancing-education",
+      "statusCode": 301
+    },
+    {
+      "source": "/corporate-partnerships-are-key-to-advancing-education/",
+      "destination": "/news/corporate-partnerships-are-key-to-advancing-education",
+      "statusCode": 301
+    },
+    {
+      "source": "/corporate-partnerships-driving-digital-inclusion",
+      "destination": "/news/corporate-partnerships-driving-digital-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/corporate-partnerships-driving-digital-inclusion/",
+      "destination": "/news/corporate-partnerships-driving-digital-inclusion",
+      "statusCode": 301
+    },
+    {
+      "source": "/digital-literacy-the-new-pathway-to-opportunity",
+      "destination": "/news/digital-literacy-the-new-pathway-to-opportunity",
+      "statusCode": 301
+    },
+    {
+      "source": "/digital-literacy-the-new-pathway-to-opportunity/",
+      "destination": "/news/digital-literacy-the-new-pathway-to-opportunity",
+      "statusCode": 301
+    },
+    {
+      "source": "/digital-skills-for-kenyan-youth-preparing-the-next-generation-for-global-opportunities",
+      "destination": "/news/digital-skills-for-kenyan-youth-preparing-the-next-generation-for-global-opportunities",
+      "statusCode": 301
+    },
+    {
+      "source": "/digital-skills-for-kenyan-youth-preparing-the-next-generation-for-global-opportunities/",
+      "destination": "/news/digital-skills-for-kenyan-youth-preparing-the-next-generation-for-global-opportunities",
+      "statusCode": 301
+    },
+    {
+      "source": "/disability-is-not-inability-empowering-persons-with-disabilities-in-kenya",
+      "destination": "/news/disability-is-not-inability-empowering-persons-with-disabilities-in-kenya",
+      "statusCode": 301
+    },
+    {
+      "source": "/disability-is-not-inability-empowering-persons-with-disabilities-in-kenya/",
+      "destination": "/news/disability-is-not-inability-empowering-persons-with-disabilities-in-kenya",
+      "statusCode": 301
+    },
+    {
+      "source": "/empowering-girls-and-women-through-education",
+      "destination": "/news/empowering-girls-and-women-through-education",
+      "statusCode": 301
+    },
+    {
+      "source": "/empowering-girls-and-women-through-education/",
+      "destination": "/news/empowering-girls-and-women-through-education",
+      "statusCode": 301
+    },
+    {
+      "source": "/empowering-women-entrepreneurs-in-kenya-how-skills-and-support-transform-lives",
+      "destination": "/news/empowering-women-entrepreneurs-in-kenya-how-skills-and-support-transform-lives",
+      "statusCode": 301
+    },
+    {
+      "source": "/empowering-women-entrepreneurs-in-kenya-how-skills-and-support-transform-lives/",
+      "destination": "/news/empowering-women-entrepreneurs-in-kenya-how-skills-and-support-transform-lives",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-community-wellness-programs-transform-lives-in-kenyahow-you-can-support-wellness-initiatives-in-your-community",
+      "destination": "/news/how-community-wellness-programs-transform-lives-in-kenya",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-community-wellness-programs-transform-lives-in-kenyahow-you-can-support-wellness-initiatives-in-your-community/",
+      "destination": "/news/how-community-wellness-programs-transform-lives-in-kenya",
+      "statusCode": 301
+    },
+    {
+      "source": "/breaking-barriers-creating-inclusive-workspaces-for-pwds-in-kenya",
+      "destination": "/news/how-digital-skills-open-doors-for-persons-with-disabilities",
+      "statusCode": 301
+    },
+    {
+      "source": "/breaking-barriers-creating-inclusive-workspaces-for-pwds-in-kenya/",
+      "destination": "/news/how-digital-skills-open-doors-for-persons-with-disabilities",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-economic-empowerment-is-transforming-kenyan-communities-and-how-you-can-help-today",
+      "destination": "/news/how-economic-empowerment-is-transforming-kenyan-communities-and-how-you-can-help-today",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-economic-empowerment-is-transforming-kenyan-communities-and-how-you-can-help-today/",
+      "destination": "/news/how-economic-empowerment-is-transforming-kenyan-communities-and-how-you-can-help-today",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-quality-education-transforms-communities-in-kenya",
+      "destination": "/news/how-quality-education-transforms-communities-in-kenya",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-quality-education-transforms-communities-in-kenya/",
+      "destination": "/news/how-quality-education-transforms-communities-in-kenya",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-you-can-support-kenyas-economic-growth-through-empowerment-programs",
+      "destination": "/news/how-you-can-support-kenyas-economic-growth-through-empowerment-programs",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-you-can-support-kenyas-economic-growth-through-empowerment-programs/",
+      "destination": "/news/how-you-can-support-kenyas-economic-growth-through-empowerment-programs",
+      "statusCode": 301
+    },
+    {
+      "source": "/inclusive-education-supporting-learners-with-disabilities",
+      "destination": "/news/inclusive-education-supporting-learners-with-disabilities",
+      "statusCode": 301
+    },
+    {
+      "source": "/inclusive-education-supporting-learners-with-disabilities/",
+      "destination": "/news/inclusive-education-supporting-learners-with-disabilities",
+      "statusCode": 301
+    },
+    {
+      "source": "/innovation-in-rural-kenya-tech-for-small-communities",
+      "destination": "/news/innovation-in-rural-kenya-tech-for-small-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/innovation-in-rural-kenya-tech-for-small-communities/",
+      "destination": "/news/innovation-in-rural-kenya-tech-for-small-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership-development-for-kenyan-youth",
+      "destination": "/news/leadership-development-for-kenyan-youth",
+      "statusCode": 301
+    },
+    {
+      "source": "/leadership-development-for-kenyan-youth/",
+      "destination": "/news/leadership-development-for-kenyan-youth",
+      "statusCode": 301
+    },
+    {
+      "source": "/promoting-physical-and-mental-wellness-in-kenya-a-community-approach",
+      "destination": "/news/promoting-physical-and-mental-wellness-in-kenya-a-community-approach",
+      "statusCode": 301
+    },
+    {
+      "source": "/promoting-physical-and-mental-wellness-in-kenya-a-community-approach/",
+      "destination": "/news/promoting-physical-and-mental-wellness-in-kenya-a-community-approach",
+      "statusCode": 301
+    },
+    {
+      "source": "/stories-of-transformation-how-tech-hubs-empower-youth",
+      "destination": "/news/stories-of-transformation-how-tech-hubs-empower-youth",
+      "statusCode": 301
+    },
+    {
+      "source": "/stories-of-transformation-how-tech-hubs-empower-youth/",
+      "destination": "/news/stories-of-transformation-how-tech-hubs-empower-youth",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers-as-digital-mentors-inspiring-the-next-generation",
+      "destination": "/news/the-french-initiative-opening-global-doors-for-kenyan-students",
+      "statusCode": 301
+    },
+    {
+      "source": "/volunteers-as-digital-mentors-inspiring-the-next-generation/",
+      "destination": "/news/the-french-initiative-opening-global-doors-for-kenyan-students",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-role-of-women-in-kenyas-digital-future",
+      "destination": "/news/the-role-of-women-in-kenyas-digital-future",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-role-of-women-in-kenyas-digital-future/",
+      "destination": "/news/the-role-of-women-in-kenyas-digital-future",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-farmers-need-economic-empowerment-programs-now-more-than-ever",
+      "destination": "/news/why-farmers-need-economic-empowerment-programs-now-more-than-ever",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-farmers-need-economic-empowerment-programs-now-more-than-ever/",
+      "destination": "/news/why-farmers-need-economic-empowerment-programs-now-more-than-ever",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-mental-health-matters-for-kenyas-future-building-resilient-communities",
+      "destination": "/news/why-mental-health-matters-for-kenyas-future-building-resilient-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-mental-health-matters-for-kenyas-future-building-resilient-communities/",
+      "destination": "/news/why-mental-health-matters-for-kenyas-future-building-resilient-communities",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-school-libraries-are-essential-for-kenyan-learners",
+      "destination": "/news/why-school-libraries-are-essential-for-kenyan-learners",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-school-libraries-are-essential-for-kenyan-learners/",
+      "destination": "/news/why-school-libraries-are-essential-for-kenyan-learners",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/:path*",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/((?!admin).*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-pfgOMgfVZwm2ODyms34QYW9h8EwicylhV77q5LHK8c0=' https://plausible.io https://www.googletagmanager.com https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://vercel.live https://vercel.com; font-src 'self' https://vercel.live; media-src 'self'; connect-src 'self' https://plausible.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://vercel.live wss://ws-us3.pusher.com; frame-src https://vercel.live; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/img/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/og/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    },
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    },
+    {
+      "source": "/admin(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.githubusercontent.com https://github.com; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://unpkg.com; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+        }
+      ]
+    }
+  ]
+}

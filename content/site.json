@@ -1,0 +1,33 @@
+{
+  "_help": "Site-wide settings. Any value starting with TODO shows on the site as a highlighted placeholder until replaced. Run `pnpm content:check` to list what is still outstanding.",
+  "name": "Mercy Wanjau Foundation",
+  "shortName": "MWF",
+  "url": "https://mw-foundation.org",
+  "tagline": "Driving sustainable change by empowering people and transforming communities.",
+  "description": "The Mercy Wanjau Foundation works with rural communities in Kenya on digital inclusion, education and leadership, women's economic empowerment, wellness and disability inclusion.",
+  "contact": {
+    "email": "info@mw-foundation.org",
+    "mediaEmail": "info@mw-foundation.org",
+    "phone": "TODO: phone number, e.g. +254 7XX XXX XXX",
+    "whatsapp": "TODO: WhatsApp number in international format, digits only, e.g. 2547XXXXXXXX",
+    "address": ["Mbaruk Road", "Nairobi, Kenya"],
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Mbaruk+Road%2C+Nairobi",
+    "hours": "TODO: office hours, e.g. Monday to Friday, 8:30am – 5:00pm EAT"
+  },
+  "social": [
+    { "name": "X", "handle": "@mwfoundatn", "url": "https://x.com/mwfoundatn" },
+    { "name": "YouTube", "handle": "@MercyWanjauFoundation", "url": "https://www.youtube.com/@MercyWanjauFoundation" },
+    { "name": "LinkedIn", "handle": "Mercy Wanjau Foundation", "url": "https://www.linkedin.com/in/mercy-wanjau-foundation-2409bb396" },
+    { "name": "Instagram", "handle": "mercy_wanjau_foundation", "url": "https://www.instagram.com/mercy_wanjau_foundation/" }
+  ],
+  "registration": {
+    "legalName": "Mercy Wanjau Foundation",
+    "type": "TODO: legal form, e.g. Public Benefit Organisation registered with the PBO Regulatory Authority",
+    "number": "TODO: registration number",
+    "registeredOffice": "Mbaruk Road, Nairobi, Kenya",
+    "dataProtectionNumber": "TODO: ODPC data controller registration number (Kenya Data Protection Act, 2019)"
+  },
+  "independenceStatement": "The Mercy Wanjau Foundation is an independent, non-partisan, not-for-profit organisation. It is not part of, and does not act on behalf of, any government office, and it does not engage in political campaigning. Gifts to the Foundation do not create any expectation of access, influence or favour.",
+  "officialChannels": "The Foundation only receives donations through the M-PESA and card channels listed on this website. We never ask for payment in exchange for jobs, scholarships, sponsorship or support. If someone contacts you claiming to represent the Foundation and asks for money, please verify with us at info@mw-foundation.org.",
+  "previousSiteUrl": "https://mw-foundation.org"
+}

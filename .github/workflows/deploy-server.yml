@@ -1,0 +1,92 @@
+# Builds the site and uploads it to the private LiteSpeed/Apache + PHP server.
+# - Every push to `main` (including edits made in /admin) deploys to STAGING.
+# - PRODUCTION is deployed manually only: Actions → "Deploy to private server" → Run workflow.
+#
+# Configure in GitHub → Settings → Environments, one environment each for `staging` and `production`:
+#   Secrets:   DEPLOY_URL       sftp://host:22  or  ftps://ftp.example.com   (FTP over TLS)
+#              DEPLOY_USER      SFTP/FTP username
+#              DEPLOY_PASSWORD  SFTP/FTP password
+#              DEPLOY_PATH      remote web root, e.g. /home/account/public_html or /public_html
+#   Variables: VITE_SITE_ENV    staging | production
+#              VITE_SITE_URL    domain of that server, e.g. https://mw-foundation.ziratech.com (staging)
+#              VITE_PLAUSIBLE_DOMAIN (optional)
+#              DEPLOY_VERIFY_CERT  "no" only if the host uses a self-signed FTPS certificate
+#
+# WARNING: the upload mirrors dist/client and deletes remote files that are not part of the
+# build. Back up the existing site (e.g. WordPress) before the first production deploy.
+
+name: Deploy to private server
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Where to deploy
+        type: choice
+        options: [staging, production]
+        default: staging
+
+concurrency:
+  group: deploy-${{ github.event.inputs.environment || 'staging' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install
+        run: |
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - name: Check
+        run: |
+          pnpm images
+          pnpm typecheck
+          pnpm test
+        env:
+          VITE_SITE_URL: ${{ vars.VITE_SITE_URL }}
+
+      - name: Build for the PHP server
+        run: pnpm build:server-host
+        env:
+          VITE_SITE_ENV: ${{ vars.VITE_SITE_ENV }}
+          VITE_SITE_URL: ${{ vars.VITE_SITE_URL }}
+          VITE_PLAUSIBLE_DOMAIN: ${{ vars.VITE_PLAUSIBLE_DOMAIN }}
+
+      - name: Upload
+        env:
+          DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          VERIFY_CERT: ${{ vars.DEPLOY_VERIFY_CERT || 'yes' }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          lftp -c "
+            set net:max-retries 3;
+            set net:timeout 30;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate ${VERIFY_CERT};
+            set sftp:auto-confirm yes;
+            open -u \"${DEPLOY_USER}\",\"${DEPLOY_PASSWORD}\" \"${DEPLOY_URL}\";
+            mirror --reverse --delete --parallel=4 --verbose=1 \
+              --exclude-glob .well-known/acme-challenge/ \
+              --exclude-glob cgi-bin/ \
+              --exclude-glob .user.ini \
+              --exclude-glob api/config.local.php \
+              dist/client/ \"${DEPLOY_PATH}\"
+          "

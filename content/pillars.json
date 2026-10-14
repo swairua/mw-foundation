@@ -1,0 +1,257 @@
+{
+  "_help": "The five pillars. Order here is the order used across the site. `slug` becomes the URL (/our-work/<slug>) — changing it breaks links, so add a redirect in vercel.json if you do. `image` is a file name from content/images (without extension). `facts` only appear when they are documented; leave the list empty rather than estimating. `heroImage` (optional) overrides the image on the pillar page itself.",
+  "pillars": [
+    {
+      "slug": "digital-inclusion",
+      "number": "01",
+      "name": "Digital Inclusion",
+      "icon": "laptop",
+      "image": "stock-digital-laptop",
+      "outcome": "Digital skills, assistive devices and mentorship that connect rural youth, women and persons with disabilities to the digital economy.",
+      "lead": "We work to close Kenya's digital divide where it is widest, equipping youth, women and persons with disabilities with the skills, tools and mentorship to build real solutions and thrive in a connected economy.",
+      "overview": [
+        "Digital Inclusion is a central driver of the Foundation's mission. It focuses on widening access to digital tools, skills and innovation so that opportunity no longer depends on where a person lives, with particular attention to youth and persons with disabilities.",
+        "We treat technology as a means rather than an end. It belongs wherever it improves outcomes people care about: finding work, running a business, continuing to learn, or communicating independently."
+      ],
+      "focus": [
+        "Digital literacy and online-work skills for youth and women",
+        "Assistive technology for persons with disabilities, with training on its use",
+        "Mentorship from people already working in the digital economy",
+        "Tech hubs and training materials designed for rural learners"
+      ],
+      "programmes": [
+        {
+          "title": "Digital skills and mentorship",
+          "status": "",
+          "text": "Practical training in digital literacy, online work and online safety, paired with mentors who show what is possible."
+        },
+        {
+          "title": "Assistive devices",
+          "status": "",
+          "text": "Screen readers, adaptive keyboards and specialised software, procured with specialist institutions and backed by training so they are used well."
+        },
+        {
+          "title": "Community tech hubs",
+          "status": "Seeking funding",
+          "text": "Shared spaces with devices and connectivity where young people can learn, practise and take on online work close to home."
+        }
+      ],
+      "facts": [],
+      "help": {
+        "donate": "Fund tech hubs, assistive devices and training materials tailored to rural learners.",
+        "volunteer": "Mentor learners, teach digital skills or support community outreach.",
+        "partner": "Corporate and education partners strengthen delivery; sponsorship schemes can support a whole cohort of learners."
+      },
+      "legacyPaths": [
+        "/tech-and-innovation"
+      ]
+    },
+    {
+      "slug": "education-and-leadership",
+      "number": "02",
+      "name": "Education & Leadership",
+      "icon": "book",
+      "image": "french-initiative-classroom-mentor",
+      "outcome": "French lessons for 570 students in five Kirinyaga schools, alongside school libraries and leadership mentoring.",
+      "lead": "We champion inclusive education that unlocks potential, nurtures curiosity and connects learners to a wider world, and we cultivate young leaders who will drive change in their own communities.",
+      "overview": [
+        "Education & Leadership focuses on closing learning gaps and developing leaders who inspire social change. By including youth, women and persons with disabilities from the start, we strengthen the base for lasting community growth.",
+        "Our flagship programme, the French Initiative, began in August 2025 with five schools in Kirinyaga County. It gives 570 students a second international language and, with it, a wider choice of studies and careers."
+      ],
+      "focus": [
+        "Language learning as a gateway to regional and global opportunity",
+        "School libraries that give every learner access to books",
+        "Mentorship and leadership development for young people",
+        "Inclusive learning for students with disabilities"
+      ],
+      "programmes": [
+        {
+          "title": "The French Initiative",
+          "status": "Since August 2025",
+          "text": "Weekly French classes, clubs and cultural activities in five Kirinyaga schools, reaching 570 students, many of whom had never studied a foreign language.",
+          "story": "the-french-initiative-opening-global-doors-for-kenyan-students"
+        },
+        {
+          "title": "School libraries",
+          "status": "Seeking school partners",
+          "text": "Working with schools to establish libraries within their compounds, giving hundreds of students inclusive access to books and quiet places to learn."
+        },
+        {
+          "title": "Leadership development",
+          "status": "",
+          "text": "Mentorship and leadership opportunities that prepare young people, especially young women, to lead in their schools and communities."
+        }
+      ],
+      "facts": [
+        {
+          "value": "570",
+          "label": "students learning French"
+        },
+        {
+          "value": "5",
+          "label": "schools in Kirinyaga County"
+        },
+        {
+          "value": "2025",
+          "label": "French Initiative launched in August"
+        }
+      ],
+      "help": {
+        "donate": "Support scholarships, French instruction, learning materials and library development.",
+        "volunteer": "Join as a mentor, French language instructor or literacy coach.",
+        "partner": "Schools can host programmes; companies can sponsor leadership and capacity-building work."
+      },
+      "legacyPaths": [
+        "/education",
+        "/leadership"
+      ],
+      "heroImage": "french-initiative-village-library"
+    },
+    {
+      "slug": "womens-economic-empowerment",
+      "number": "03",
+      "name": "Women's Economic Empowerment",
+      "icon": "sprout",
+      "image": "stock-woman-farmer-harvest",
+      "outcome": "Skills, networks and market access for women entrepreneurs and smallholder farmers, from Kiine Ward to the national stage.",
+      "lead": "We equip women, youth and smallholder farmers with the skills, resources and networks to build livelihoods that last, with dignity and independence.",
+      "overview": [
+        "This pillar starts from a simple belief: every Kenyan deserves a fair chance to thrive. We work through practical, locally anchored initiatives with women, youth, persons with disabilities and smallholder farmers.",
+        "In October 2026 the Foundation took 42 livestock, poultry, coffee and tea farmers from Kiine Ward, Kirinyaga County, to the Agriculture and Food Systems Transformation Summit in Nairobi, so that the people who grow Kenya's food were in the room where its future was being discussed."
+      ],
+      "focus": [
+        "Entrepreneurship and financial skills for women",
+        "Farmer training built around demonstration plots",
+        "Digital tools and market linkages for small enterprises",
+        "Bringing rural producers into national conversations"
+      ],
+      "programmes": [
+        {
+          "title": "Farmers at the national table",
+          "status": "October 2026",
+          "text": "42 farmers from Kiine Ward joined the Agriculture and Food Systems Transformation Summit 2026 as guests of the Foundation.",
+          "story": "42-kirinyaga-farmers-take-their-place-in-kenyas-food-systems-conversation"
+        },
+        {
+          "title": "Training cohorts and demonstration plots",
+          "status": "Seeking sponsors",
+          "text": "Hands-on training for farmers and women entrepreneurs in Kirinyaga, organised around a working demonstration plot."
+        },
+        {
+          "title": "Digital Labs and Incubation Circles",
+          "status": "Seeking host partners",
+          "text": "Spaces where emerging entrepreneurs get digital tools, business coaching and peer support."
+        }
+      ],
+      "facts": [
+        {
+          "value": "42",
+          "label": "Kiine Ward farmers at the 2026 national food systems summit"
+        }
+      ],
+      "help": {
+        "donate": "Fund start-up kits, farm inputs or internet bundles for programme graduates.",
+        "volunteer": "Offer mentorship, business coaching or digital tools to emerging entrepreneurs.",
+        "partner": "Sponsor a training cohort or demonstration plot, or host a Digital Lab in your county."
+      },
+      "legacyPaths": [
+        "/economic-empowerment"
+      ]
+    },
+    {
+      "slug": "wellness",
+      "number": "04",
+      "name": "Wellness",
+      "icon": "heart",
+      "image": "stock-women-laughing",
+      "outcome": "Monthly mental-health forums that equip people to hold supportive conversations and find the right help.",
+      "lead": "We promote mental wellness by creating safe, supportive spaces where people can speak, share and grow, because strong minds build strong communities.",
+      "overview": [
+        "Neither a strong economy nor good education can thrive without healthy people. Our Wellness pillar works where physical and mental health meet, with a present focus on mental health.",
+        "Each month we hold an online forum with partner service providers. Participants learn how to hold a supportive conversation and how to encourage professional help or self-help, much as a first aider would for a physical injury. The aim is to reduce stigma and offer first-level care. Early feedback has been warmly appreciative, and it encourages us to continue preventative, dignity-affirming support."
+      ],
+      "focus": [
+        "Mental-health awareness and stigma reduction",
+        "First-level support skills for families and communities",
+        "Referral to qualified professionals",
+        "Culturally relevant health education for schools and churches"
+      ],
+      "programmes": [
+        {
+          "title": "Monthly mental-health forums",
+          "status": "Monthly, online",
+          "text": "Facilitated with partner service providers, open to anyone who wants to support a friend, colleague or family member."
+        },
+        {
+          "title": "Wellness cohorts",
+          "status": "Seeking funding",
+          "text": "Structured sessions that take the forum model to a new community or workplace."
+        },
+        {
+          "title": "Community health education",
+          "status": "Seeking partners",
+          "text": "Developing and distributing culturally relevant health education materials across schools and churches."
+        }
+      ],
+      "facts": [
+        {
+          "value": "Monthly",
+          "label": "online mental-health forums with partner providers"
+        }
+      ],
+      "help": {
+        "donate": "Fund a Wellness Cohort for a new community.",
+        "volunteer": "Mental-health professionals can volunteer as facilitators or mentors.",
+        "partner": "Help develop and distribute health education materials for schools and churches."
+      },
+      "legacyPaths": [
+        "/wellness-and-mental-health"
+      ]
+    },
+    {
+      "slug": "disability-inclusion",
+      "number": "05",
+      "name": "Disability Inclusion",
+      "icon": "accessibility",
+      "image": "stock-wheelchair-reading",
+      "outcome": "Digital skills, assistive technology and remote-work pathways for persons with disabilities, anchored in Kirinyaga County.",
+      "lead": "Disability is not inability. We work for a Kenya where every ability is valued, advocating for access, dignity and equal opportunity so that inclusion is lived, not just promised.",
+      "overview": [
+        "This pillar rests on the belief that equal access to opportunity, especially in the growing digital economy, is a fundamental right. It tackles limited access to employment, digital exclusion and stigma directly.",
+        "Anchored in Kirinyaga County and designed to scale, we partner with specialised institutions and community service organisations to provide targeted digital skills, assistive technology and mentorship."
+      ],
+      "focus": [
+        "Digital skills training designed for learners with disabilities",
+        "Assistive technology and the training to use it",
+        "Mentorship and remote-work readiness",
+        "Community awareness that challenges stigma"
+      ],
+      "programmes": [
+        {
+          "title": "Digital skills and assistive technology",
+          "status": "Kirinyaga County",
+          "text": "Targeted training and assistive devices, delivered with specialised institutions and community service organisations."
+        },
+        {
+          "title": "Remote-work pathways",
+          "status": "Seeking technical partners",
+          "text": "We welcome technical support to connect digitally skilled graduates with disabilities to remote work."
+        },
+        {
+          "title": "Awareness and advocacy",
+          "status": "",
+          "text": "Community campaigns that show what persons with disabilities contribute and promote inclusion in schools, workplaces and public spaces."
+        }
+      ],
+      "facts": [],
+      "help": {
+        "donate": "Provide assistive technology (adaptive devices and software) or sponsor a digital skills cohort.",
+        "volunteer": "Volunteer as a mentor or skills trainer.",
+        "partner": "Technical partners can open remote-work opportunities; employers can commit to inclusive hiring."
+      },
+      "legacyPaths": [
+        "/disability-inclusion"
+      ]
+    }
+  ]
+}
