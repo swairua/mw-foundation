@@ -1,0 +1,254 @@
+{
+  "_help": "Default alt text, caption, credit and focal point for each image in content/images (key = file name without extension). `focus` is a CSS object-position used when an image is cropped. `crop` trims the original permanently for every use, as fractions, e.g. { \"top\": 0.15 } removes the top 15%. Alt text should describe what is in the photo; never name children. Images credited 'Pexels' are stock photography — replace with the Foundation's own photos when available.",
+  "french-initiative-village-library": {
+    "alt": "Children sit on the steps of the Mitahato Village French Library reading picture books while a mentor reads alongside them",
+    "caption": "Mitahato Village French Library, Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "66% 55%"
+  },
+  "french-initiative-library-celebration": {
+    "alt": "Children and mentors raise their arms and cheer outside a village French library",
+    "caption": "Celebrating at a French Initiative library, Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "55% 50%",
+    "crop": {
+      "top": 0.17
+    }
+  },
+  "french-initiative-volunteers": {
+    "alt": "Volunteers in French library T-shirts walk along a rural road in Kirinyaga",
+    "caption": "French Initiative volunteers on a school visit",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 40%"
+  },
+  "french-initiative-classroom-mentor": {
+    "alt": "A French Initiative instructor in a blue coat speaks with students in green uniforms in a classroom",
+    "caption": "A French lesson in a Kirinyaga primary school",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "40% 40%"
+  },
+  "french-initiative-classroom-a": {
+    "alt": "Secondary school students in blue uniforms work at wooden desks during a French lesson",
+    "caption": "French Initiative classroom, Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 50%"
+  },
+  "french-initiative-classroom-b": {
+    "alt": "Students in blue uniforms listen to a teacher at the front of a classroom",
+    "caption": "French Initiative classroom, Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 50%"
+  },
+  "french-initiative-classroom-c": {
+    "alt": "A full classroom of students writing in exercise books during a French lesson",
+    "caption": "French Initiative classroom, Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 50%"
+  },
+  "french-initiative-assembly-a": {
+    "alt": "A school hall packed with pupils attending a French Initiative session",
+    "caption": "A French Initiative session in a school hall",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 60%"
+  },
+  "french-initiative-assembly-b": {
+    "alt": "Rows of pupils seated in a large school hall",
+    "caption": "A French Initiative session in a school hall",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 60%"
+  },
+  "french-initiative-lesson": {
+    "alt": "An instructor in a blue coat teaches pupils seated at desks",
+    "caption": "Learning French in Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "35% 45%"
+  },
+  "french-initiative-students-writing": {
+    "alt": "Students in maroon sweaters write in their notebooks during class",
+    "caption": "French Initiative students at work",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 45%"
+  },
+  "french-initiative-blackboard": {
+    "alt": "An instructor wearing an 'Apprenons le français' coat writes on a blackboard",
+    "caption": "Apprenons le français: a French lesson in progress",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 45%"
+  },
+  "french-initiative-chalkboard": {
+    "alt": "A teacher writes on a chalkboard in front of pupils in green jumpers",
+    "caption": "French Initiative lesson",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 45%"
+  },
+  "french-initiative-performance": {
+    "alt": "Pupils in school uniform stand in a line on a field, performing a song",
+    "caption": "French Initiative pupils performing",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 50%"
+  },
+  "kirinyaga-farmers-group": {
+    "alt": "A large group of farmers from Kiine Ward stands together in an open field under a blue sky",
+    "caption": "The Kiine Ward farmers' delegation, Kirinyaga County",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 60%"
+  },
+  "kirinyaga-farmers-delegation": {
+    "alt": "Farmers from Kiine Ward pose in front of the Agriculture and Food Systems Transformation Summit 2026 backdrop",
+    "caption": "Kiine Ward farmers at the Agriculture and Food Systems Transformation Summit 2026, Nairobi",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 55%"
+  },
+  "kirinyaga-farmers-summit-entrance": {
+    "alt": "Delegates gather at the entrance to the summit at the Jamhuri Park ASK Grounds in Nairobi",
+    "caption": "Jamhuri Park ASK Grounds, Nairobi",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 50%"
+  },
+  "kirinyaga-farmers-summit-audience": {
+    "alt": "Farmers seated among the audience at the national summit",
+    "caption": "In the audience on Day Two of the summit",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 55%"
+  },
+  "kirinyaga-farmers-departure": {
+    "alt": "The farmers' delegation gathers beside a bus before travelling to Nairobi",
+    "caption": "Setting off for Nairobi",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 55%"
+  },
+  "kirinyaga-farmers-conversation": {
+    "alt": "A woman in a dark jacket speaks with farmers from the Kiine Ward delegation",
+    "caption": "In conversation with the Kiine Ward delegation",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "60% 40%"
+  },
+  "mercy-wanjau": {
+    "alt": "Portrait of Mercy Wanjau, founder of the Mercy Wanjau Foundation",
+    "caption": "Mercy Wanjau, Founder",
+    "credit": "Mercy Wanjau Foundation",
+    "focus": "50% 30%"
+  },
+  "stock-women-laptop": {
+    "alt": "Three women gather around a laptop, smiling as they work together",
+    "credit": "Pexels",
+    "focus": "50% 45%"
+  },
+  "stock-braille-reading": {
+    "alt": "Hands reading a page of braille",
+    "credit": "Pexels",
+    "focus": "55% 50%"
+  },
+  "stock-prosthetic-hand": {
+    "alt": "A prosthetic hand reaching towards a person's hand",
+    "credit": "Pexels",
+    "focus": "60% 50%"
+  },
+  "stock-support-conversation": {
+    "alt": "Two people seated on a sofa in a calm, supportive conversation",
+    "credit": "Pexels",
+    "focus": "60% 50%"
+  },
+  "stock-support-circle": {
+    "alt": "People seated in a circle during a support group session",
+    "credit": "Pexels",
+    "focus": "50% 50%"
+  },
+  "stock-hands-together": {
+    "alt": "A group of people join hands in a circle under trees",
+    "credit": "Pexels",
+    "focus": "50% 50%"
+  },
+  "stock-teacher-classroom": {
+    "alt": "A teacher gestures as he speaks to smiling students in a classroom",
+    "credit": "Pexels",
+    "focus": "45% 40%"
+  },
+  "stock-planting": {
+    "alt": "A farmer's hands planting seedlings in tilled soil",
+    "credit": "Pexels",
+    "focus": "60% 50%"
+  },
+  "stock-laptop-typing": {
+    "alt": "Hands typing on a laptop keyboard",
+    "credit": "Pexels",
+    "focus": "50% 50%"
+  },
+  "stock-phone-call": {
+    "alt": "A young woman smiles while holding a smartphone",
+    "credit": "Pexels",
+    "focus": "60% 40%"
+  },
+  "stock-phone-app": {
+    "alt": "A hand holding a smartphone open on an app",
+    "credit": "Pexels",
+    "focus": "60% 50%"
+  },
+  "stock-hands-frame": {
+    "alt": "A young man frames his face with his hands",
+    "credit": "Pexels",
+    "focus": "50% 45%"
+  },
+  "stock-community-circle": {
+    "alt": "An aerial view of a group of people standing in a circle, hands joined in the centre",
+    "credit": "Pexels",
+    "focus": "50% 50%"
+  },
+  "stock-smiling-child": {
+    "alt": "A smiling child in a black-and-white portrait",
+    "credit": "Pexels",
+    "focus": "50% 40%"
+  },
+  "stock-clasped-hands": {
+    "alt": "Two clasped hands, one wearing a beaded Kenyan bracelet",
+    "credit": "Pexels",
+    "focus": "50% 50%"
+  },
+  "stock-stretch": {
+    "alt": "A woman stretches her arms overhead against a clear blue sky",
+    "credit": "Pexels",
+    "focus": "50% 40%"
+  },
+  "stock-workshop": {
+    "alt": "A facilitator places sticky notes on a board during a workshop",
+    "credit": "Pexels",
+    "focus": "40% 40%"
+  },
+  "stock-young-people": {
+    "alt": "Two young people smiling together",
+    "credit": "Pexels",
+    "focus": "50% 40%"
+  },
+  "stock-hero-mentor-classroom": {
+    "alt": "A young mentor in a yellow T-shirt reads from a booklet to a full classroom of attentive pupils",
+    "credit": "Unsplash / Emmanuel Ikwuegbu",
+    "focus": "62% 45%",
+    "note": "Stock photograph (cropped and mirrored). Replace with the Foundation's own high-resolution photography when available."
+  },
+  "stock-digital-laptop": {
+    "alt": "A young woman smiles over her shoulder while working on a laptop",
+    "credit": "Unsplash / Makmot Robin",
+    "focus": "62% 40%"
+  },
+  "stock-woman-farmer-harvest": {
+    "alt": "A smiling woman farmer harvests leafy greens in a field at golden hour",
+    "credit": "Unsplash / Richard Nyoni",
+    "focus": "40% 40%"
+  },
+  "stock-women-laughing": {
+    "alt": "Two women laugh together during a relaxed conversation on a sofa",
+    "credit": "Unsplash / Ninthgrid",
+    "focus": "50% 40%"
+  },
+  "stock-wheelchair-reading": {
+    "alt": "A man seated in a wheelchair reads a book",
+    "credit": "Unsplash / G + L",
+    "focus": "55% 55%"
+  },
+  "stock-mount-kenya": {
+    "alt": "The jagged peaks of Mount Kenya rise above the surrounding highlands",
+    "caption": "Mount Kenya, known in Kikuyu as Kĩrĩnyaga",
+    "credit": "Unsplash / Alcock Muller",
+    "focus": "60% 45%"
+  }
+}

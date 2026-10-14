@@ -1,0 +1,4 @@
+{
+  "_help": "Partner and supporter logos for the home page strip. Add logo files (SVG preferred, or PNG on a transparent background) to public/partners/ and list them here. Only list organisations that have agreed to be named. While the list is empty, placeholders are shown on staging and the strip is hidden in production.",
+  "partners": []
+}

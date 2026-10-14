@@ -1,164 +1,28 @@
-# Fusion Starter
+# Mercy Wanjau Foundation website — notes for AI agents and developers
 
-A production-ready full-stack React application template with integrated Express server, featuring React Router 6 SPA mode, TypeScript, Vitest, Zod and modern tooling.
+Read `README.md` first. Key rules for working in this repo:
 
-While the starter comes with a express server, only create endpoint when strictly neccesary, for example to encapsulate logic that must leave in the server, such as private keys handling, or certain DB operations, db...
+## Architecture
 
-## Tech Stack
+- Vite + React API on **Preact** (`preact/compat`, aliased in `vite.config.ts`). Write normal React code; don't add libraries that depend on React internals (e.g. react-dom-specific portals or concurrent features) without testing the build.
+- Every route is **prerendered** by `scripts/prerender.mjs` using `src/entry-server.tsx`, then hydrated by `src/entry-client.tsx`. Anything that reads `window`, `localStorage`, the URL query or media queries must run in `useEffect` or behind `useHydrated()`, never during render. Otherwise prerender crashes or hydration mismatches.
+- Routes live in `src/App.tsx` (`routes` array). Non-home pages are lazy chunks via `lazyPage()`. Add new routes there **and** in `routes()` in `src/entry-server.tsx` so they are prerendered and included in the sitemap.
+- Content comes from `content/` only. Copy belongs in JSON/Markdown, not in components, wherever editors might change it. Strings starting with `TODO` are placeholders rendered by `<T value>`.
+- Images: put originals in `content/images/`, add alt text in `content/media.json`, and reference them by file name without the extension through `<Img src="name" sizes="…" />`. Never link to `public/img` files directly.
+- Forms: one endpoint, `/api/forms`. On Vercel it is `api/forms.ts` → `api/_lib/forms.ts`; on the private PHP server it is `hosting/php/api/forms.php` → `lib.php`. **Keep the two in sync** (same fields, rules and messages). Add a form type in both, then use `<SmartForm type="…">`.
+- Hosting: `vercel.json` is the single source for redirects and security headers; `scripts/build-apache.mjs` turns it into `.htaccess` for the private server.
 
-- **PNPM**: Prefer pnpm
-- **Frontend**: React 18 + React Router 6 (spa) + TypeScript + Vite + TailwindCSS 3
-- **Backend**: Express server integrated with Vite dev server
-- **Testing**: Vitest
-- **UI**: Radix UI + TailwindCSS 3 + Lucide React icons
+## Design system
 
-## Project Structure
+- Colours, type scale and radii are in `tailwind.config.ts`; component classes (`.btn`, `.eyebrow`, `.chip`, `.prose-story`, …) in `src/styles/global.css`.
+- On light backgrounds use `gold-700` for gold text. `gold-500` is for buttons and fills on dark backgrounds only. Add `on-dark` to dark sections so focus rings and eyebrows switch colour.
+- Headings use italic serif accent words: `<Accent text="Plain words, *accent words.*" />`.
+- Keep animations to transform/opacity, bounded (no infinite loops) and disabled under `prefers-reduced-motion`.
 
-```
-client/                   # React SPA frontend
-├── pages/                # Route components (Index.tsx = home)
-├── components/ui/        # Pre-built UI component library
-├── App.tsx                # App entry point and with SPA routing setup
-└── global.css            # TailwindCSS 3 theming and global styles
-
-server/                   # Express API backend
-├── index.ts              # Main server setup (express config + routes)
-└── routes/               # API handlers
-
-shared/                   # Types used by both client & server
-└── api.ts                # Example of how to share api interfaces
-```
-
-## Key Features
-
-## SPA Routing System
-
-The routing system is powered by React Router 6:
-
-- `client/pages/Index.tsx` represents the home page.
-- Routes are defined in `client/App.tsx` using the `react-router-dom` import
-- Route files are located in the `client/pages/` directory
-
-For example, routes can be defined with:
-
-```typescript
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-<Routes>
-  <Route path="/" element={<Index />} />
-  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-  <Route path="*" element={<NotFound />} />
-</Routes>;
-```
-
-### Styling System
-
-- **Primary**: TailwindCSS 3 utility classes
-- **Theme and design tokens**: Configure in `client/global.css` 
-- **UI components**: Pre-built library in `client/components/ui/`
-- **Utility**: `cn()` function combines `clsx` + `tailwind-merge` for conditional classes
-
-```typescript
-// cn utility usage
-className={cn(
-  "base-classes",
-  { "conditional-class": condition },
-  props.className  // User overrides
-)}
-```
-
-### Express Server Integration
-
-- **Development**: Single port (8080) for both frontend/backend
-- **Hot reload**: Both client and server code
-- **API endpoints**: Prefixed with `/api/`
-
-#### Example API Routes
-- `GET /api/ping` - Simple ping api
-- `GET /api/demo` - Demo endpoint  
-
-### Shared Types
-Import consistent types in both client and server:
-```typescript
-import { DemoResponse } from '@shared/api';
-```
-
-Path aliases:
-- `@shared/*` - Shared folder
-- `@/*` - Client folder
-
-## Development Commands
+## Checks before committing
 
 ```bash
-pnpm dev        # Start dev server (client + server)
-pnpm build      # Production build
-pnpm start      # Start production server
-pnpm typecheck  # TypeScript validation
-pnpm test          # Run Vitest tests
+pnpm typecheck && pnpm test && pnpm build
 ```
 
-## Adding Features
-
-### Add new colors to the theme
-
-Open `client/global.css` and `tailwind.config.ts` and add new tailwind colors.
-
-### New API Route
-1. **Optional**: Create a shared interface in `shared/api.ts`:
-```typescript
-export interface MyRouteResponse {
-  message: string;
-  // Add other response properties here
-}
-```
-
-2. Create a new route handler in `server/routes/my-route.ts`:
-```typescript
-import { RequestHandler } from "express";
-import { MyRouteResponse } from "@shared/api"; // Optional: for type safety
-
-export const handleMyRoute: RequestHandler = (req, res) => {
-  const response: MyRouteResponse = {
-    message: 'Hello from my endpoint!'
-  };
-  res.json(response);
-};
-```
-
-3. Register the route in `server/index.ts`:
-```typescript
-import { handleMyRoute } from "./routes/my-route";
-
-// Add to the createServer function:
-app.get("/api/my-endpoint", handleMyRoute);
-```
-
-4. Use in React components with type safety:
-```typescript
-import { MyRouteResponse } from '@shared/api'; // Optional: for type safety
-
-const response = await fetch('/api/my-endpoint');
-const data: MyRouteResponse = await response.json();
-```
-
-### New Page Route
-1. Create component in `client/pages/MyPage.tsx`
-2. Add route in `client/App.tsx`:
-```typescript
-<Route path="/my-page" element={<MyPage />} />
-```
-
-## Production Deployment
-
-- **Standard**: `pnpm build`
-- **Binary**: Self-contained executables (Linux, macOS, Windows)
-- **Cloud Deployment**: Use either Netlify or Vercel via their MCP integrations for easy deployment. Both providers work well with this starter template.
-
-## Architecture Notes
-
-- Single-port development with Vite + Express integration
-- TypeScript throughout (client, server, shared)
-- Full hot reload for rapid development
-- Production-ready with multiple deployment options
-- Comprehensive UI component library included
-- Type-safe API communication via shared interfaces
+The build fails if the inline script in `index.html` changes without updating the CSP hash in `vercel.json`.

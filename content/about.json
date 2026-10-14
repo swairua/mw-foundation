@@ -1,0 +1,58 @@
+{
+  "_help": "Content for the Who We Are page. Board and team entries marked TODO show as placeholders. Files listed under governance should be added to public/documents/ and the path entered here (e.g. /documents/annual-report-2025.pdf).",
+  "mission": "Empowering communities through technology, education, economic inclusion and wellness, and supporting persons with disabilities to participate fully.",
+  "vision": "To be a beacon of hope driving inclusive growth and social transformation across Kenya's rural communities.",
+  "belief": "Real change begins when people are seen, supported and empowered.",
+  "founder": {
+    "name": "Mercy Wanjau",
+    "role": "Founder",
+    "image": "mercy-wanjau",
+    "bio": [
+      "Mercy Wanjau is a commercial lawyer, governance professional and public sector leader. She serves as Secretary to the Cabinet of the Republic of Kenya.",
+      "Her expertise spans ICT regulation, policy development, corporate governance and public administration. She previously served as Acting Director-General and Director of Legal Services at the Communications Authority of Kenya, where she played a key role in shaping the country's digital and regulatory landscape."
+    ],
+    "why": "The Foundation brings that experience to the places where access is thinnest. It works with rural communities, starting in Kirinyaga County, so that the opportunities shaping Kenya's future, from digital work to international languages and fairer markets for farmers, reach the people too often left out of them.",
+    "quote": "TODO: a short personal statement from Mercy Wanjau on why she founded the Foundation (2–3 sentences)"
+  },
+  "principles": [
+    { "name": "Integrity", "icon": "shield", "text": "Honest about what works, what does not, and what we are still learning." },
+    { "name": "Inclusivity", "icon": "users", "text": "Programmes designed with women, youth and persons with disabilities, not only for them." },
+    { "name": "Innovation", "icon": "lightbulb", "text": "Practical tools, from language clubs to digital labs, built for rural realities." },
+    { "name": "Accountability", "icon": "scale", "text": "Clear reporting to the communities, donors and partners we serve." },
+    { "name": "Community-centred development", "icon": "home", "text": "Communities set the priorities; we bring partners, skills and resources." },
+    { "name": "Sustainability", "icon": "leaf", "text": "Models designed to outlast our involvement and to scale to new counties." }
+  ],
+  "codeOfConduct": [
+    { "name": "Act with respect", "text": "Treat every person with kindness, patience and dignity." },
+    { "name": "Be accountable", "text": "Deliver on promises and own outcomes, both successes and lessons." },
+    { "name": "Protect confidentiality", "text": "Safeguard the trust and privacy of the people we serve." },
+    { "name": "Promote team spirit", "text": "Value collaboration, communication and shared growth." },
+    { "name": "Uphold non-discrimination", "text": "Reject all forms of bias, prejudice and harassment." },
+    { "name": "Lead by example", "text": "Embody the Foundation's values in every action, however small." }
+  ],
+  "board": [
+    { "name": "TODO: name", "role": "Board Chair", "bio": "TODO: one-line biography", "image": "" },
+    { "name": "TODO: name", "role": "Board Member", "bio": "TODO: one-line biography", "image": "" },
+    { "name": "TODO: name", "role": "Board Member", "bio": "TODO: one-line biography", "image": "" },
+    { "name": "TODO: name", "role": "Board Member", "bio": "TODO: one-line biography", "image": "" }
+  ],
+  "team": [
+    { "name": "TODO: name", "role": "Executive Director", "bio": "TODO: one-line biography", "image": "" },
+    { "name": "TODO: name", "role": "Programmes Lead, Kirinyaga", "bio": "TODO: one-line biography", "image": "" },
+    { "name": "TODO: name", "role": "Partnerships & Communications", "bio": "TODO: one-line biography", "image": "" }
+  ],
+  "governance": {
+    "documents": [
+      { "name": "Annual report", "detail": "TODO: year, e.g. 2025", "file": "" },
+      { "name": "Audited financial statements", "detail": "TODO: year and auditor", "file": "" },
+      { "name": "Certificate of registration", "detail": "TODO: issuing authority", "file": "" }
+    ],
+    "policies": [
+      { "name": "Safeguarding and child protection policy", "file": "" },
+      { "name": "Gift acceptance and conflict-of-interest policy", "file": "" },
+      { "name": "Anti-fraud and whistleblowing policy", "file": "" },
+      { "name": "Code of conduct", "file": "" },
+      { "name": "Privacy policy", "file": "/privacy-policy" }
+    ]
+  }
+}

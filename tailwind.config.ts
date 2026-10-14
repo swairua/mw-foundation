@@ -1,102 +1,81 @@
 import type { Config } from "tailwindcss";
 
+// Brand palette. Contrast pairs are verified by `tests/contrast.test.ts`.
+// - forest-900 is the brand green (#15382c); forest-950 is used for deep sections.
+// - gold-500 is the logo gold (#d2b35d). Use gold-300/400 for text on dark,
+//   gold-700 for text on cream (never gold-500 text on light backgrounds).
+// - cream-100 is the page background.
 export default {
-  darkMode: ["class"],
-  content: ["./client/**/*.{ts,tsx}"],
-  prefix: "",
+  content: ["./src/**/*.{ts,tsx}", "./plugins/**/*.ts"],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     extend: {
       colors: {
-        forest: "#15382c",
-        ivory: "#f7f4ec",
-        sand: "#e9dfca",
-        saffron: "#f8cc4d",
-        coral: "#e98268",
-        ink: "#15382c",
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+        forest: {
+          950: "#0b2019",
+          900: "#15382c",
+          800: "#1b4637",
+          700: "#235a47",
+          600: "#2e6f58",
+          200: "#c9d8cf",
+          100: "#e1eae4",
+          50: "#f0f4f1",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+        gold: {
+          200: "#f0e2bb",
+          300: "#e6cf8e",
+          400: "#dcbf6f",
+          500: "#d2b35d",
+          600: "#b8963d",
+          700: "#83631a",
+          800: "#6b5115",
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+        cream: {
+          50: "#fdfbf7",
+          100: "#f8f4ec",
+          150: "#f4eee2",
+          200: "#f1eadb",
+          300: "#e5dac4",
+          400: "#d6c7a8",
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        ink: {
+          DEFAULT: "#13261f",
+          soft: "#384b43",
+          mute: "#54655d",
         },
       },
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
-        display: ["DM Sans", "sans-serif"],
-        serif: ["DM Serif Display", "serif"],
+        sans: ['"Instrument Sans Variable"', '"Instrument Sans Fallback"', "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', '"Instrument Serif Fallback"', "Georgia", "serif"],
+      },
+      fontSize: {
+        eyebrow: ["0.75rem", { lineHeight: "1rem", letterSpacing: "0.16em" }],
+        "display-xl": ["clamp(2.75rem, 1.6rem + 5.2vw, 6rem)", { lineHeight: "0.98", letterSpacing: "-0.035em" }],
+        "display-lg": ["clamp(2.4rem, 1.7rem + 3.2vw, 4.5rem)", { lineHeight: "1.02", letterSpacing: "-0.03em" }],
+        "display-md": ["clamp(1.95rem, 1.45rem + 2.1vw, 3.25rem)", { lineHeight: "1.06", letterSpacing: "-0.025em" }],
+        "display-sm": ["clamp(1.5rem, 1.25rem + 1vw, 2.1rem)", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
+        lead: ["clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem)", { lineHeight: "1.6" }],
+      },
+      maxWidth: {
+        shell: "1240px",
+        prose: "68ch",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        card: "14px",
       },
-      keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
+      transitionTimingFunction: {
+        out: "cubic-bezier(0.2, 0.7, 0.2, 1)",
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      boxShadow: {
+        soft: "0 1px 2px rgba(11,32,25,0.04), 0 8px 24px -8px rgba(11,32,25,0.12)",
+        lift: "0 2px 4px rgba(11,32,25,0.05), 0 24px 48px -16px rgba(11,32,25,0.22)",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;

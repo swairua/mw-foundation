@@ -1,39 +1,44 @@
-import { defineConfig, Plugin } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
 import path from "node:path";
-import { createServer } from "./server";
+import { contentPlugin } from "./plugins/content";
+import { devApiPlugin } from "./plugins/dev-api";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-    fs: {
-      allow: ["./client", "./shared", "index.html"],
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
-    },
+// The app is written against the React API but runs on Preact (preact/compat),
+// which saves ~35 KB of gzipped JavaScript — significant on rural 3G connections.
+export default defineConfig({
+  plugins: [preact({ prerender: { enabled: false } }), contentPlugin(), devApiPlugin()],
+  resolve: {
+    alias: [
+      { find: "@content", replacement: path.resolve(__dirname, "content") },
+      { find: "@", replacement: path.resolve(__dirname, "src") },
+      { find: /^react-dom\/client$/, replacement: "preact/compat/client" },
+      { find: /^react-dom\/server$/, replacement: "preact/compat/server" },
+      { find: /^react-dom$/, replacement: "preact/compat" },
+      { find: /^react\/jsx-runtime$/, replacement: "preact/jsx-runtime" },
+      { find: /^react\/jsx-dev-runtime$/, replacement: "preact/jsx-dev-runtime" },
+      { find: /^react$/, replacement: "preact/compat" },
+    ],
+  },
+  ssr: {
+    // Bundle these so the React -> Preact aliases also apply in the prerender build
+    noExternal: ["react-router", "react-router-dom", "@remix-run/router", "lucide-react"],
   },
   build: {
-    outDir: "dist",
-  },
-  plugins: [react(), expressPlugin()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./client"),
-      "@shared": path.resolve(__dirname, "./shared"),
+    outDir: "dist/client",
+    manifest: true,
+    assetsInlineLimit: 0,
+    cssCodeSplit: false,
+    rollupOptions: {
+      onwarn(warning, warn) {
+        // The SSR entry imports every story eagerly on purpose; the client build still splits them.
+        if (warning.code === "INEFFECTIVE_DYNAMIC_IMPORT") return;
+        warn(warning);
+      },
     },
   },
-}));
-
-function expressPlugin(): Plugin {
-  return {
-    name: "express-plugin",
-    apply: "serve", // Only apply during development (serve mode)
-    configureServer(server) {
-      const app = createServer();
-
-      // Add Express app as middleware to Vite dev server
-      server.middlewares.use(app);
-    },
-  };
-}
+  server: {
+    port: 8080,
+    fs: { deny: [".env", ".env.*", "**/.git/**"] },
+  },
+});
